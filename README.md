@@ -1,7 +1,7 @@
 # cwg
 Go Channel Wait Group
 
-```
+```go
 package main 
 
 import "log"
