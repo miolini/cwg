@@ -18,6 +18,6 @@ func main() {
 		}(i, cwg)
 	}
 	results := cwg.Wait()
-  log.Printf("results: %v", results)
+        log.Printf("results: %v", results)
 }
 ```
