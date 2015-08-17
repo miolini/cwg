@@ -1,7 +1,8 @@
 # cwg
 Go Channel Wait Group
 
-```package main 
+```
+package main 
 
 import "log"
 
@@ -18,4 +19,5 @@ func main() {
 	}
 	results := cwg.Wait()
   log.Printf("results: %v", results)
-}```
+}
+```
