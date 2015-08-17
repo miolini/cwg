@@ -28,6 +28,20 @@ func (cwg *CWG) Done(v interface{}) {
 	cwg.channel <- v
 }
 
+func (cwg *CWG) WaitWithoutResults() {
+	stop := false
+	for !stop {
+		select {
+		case <- cwg.channel:
+			counter := cwg.Add(-1)
+			if counter == 0 {
+				stop = true
+				break
+			}
+		}
+	}
+}
+
 func (cwg *CWG) Wait() (msgs []interface{}) {
 	msgs = []interface{}{}
 	stop := false
